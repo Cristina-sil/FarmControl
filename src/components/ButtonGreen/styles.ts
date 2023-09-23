@@ -1,10 +1,14 @@
 import styled from "styled-components/native";
-import { Dimensions } from "react-native";
+import { Dimensions, TouchableOpacityProps } from "react-native";
 
-const {width} = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
-export const ButtonContainer = styled.TouchableOpacity`
-  background-color: #32B768;
+interface ButtonProps extends TouchableOpacityProps {
+  active: boolean;
+}
+
+export const ButtonContainer = styled.TouchableOpacity<ButtonProps>`
+  background-color: ${(Props) => (Props?.active ? "#32B768" : "#A5A5A5")};
   align-items: center;
   justify-content: center;
   border-radius: 16px;
@@ -12,8 +16,8 @@ export const ButtonContainer = styled.TouchableOpacity`
   width: ${width - 40}px;
 `;
 
-export const ButtonText = styled.Text`
+export const ButtonText = styled.Text<ButtonProps>`
   font-size: 22px;
-  color: #FFFFFF;
-  font-family: 'Jost-Medium';
+  color: ${(Props) => (Props.active ? "#FFFFFF" : "#D7D7D7")};
+  font-family: "Jost-Medium";
 `;
