@@ -15,7 +15,23 @@ interface HeaderProps {
   logo: String;
 }
 
-export default function Header({ name }: HeaderProps) {
+export default function Header({ name, logo }: HeaderProps) {
+
+  const transformLogo = () => {
+    const logoSplit = logo.split(' ');
+
+  let logoTransformed = '';
+
+  for (let i = 0; i < logoSplit.length; i++) {
+    const letter = logoSplit[i];
+    if (letter.length > 0) {
+      logoTransformed += letter[0];
+    }
+  }
+
+  return logoTransformed;
+  }
+  
   return (
     <Container>
       <View>
@@ -23,7 +39,7 @@ export default function Header({ name }: HeaderProps) {
         <UserName>{name}</UserName>
       </View>
       <IconContainer>
-        <IconText>WP</IconText>
+        <IconText>{transformLogo()}</IconText>
       </IconContainer>
     </Container>
   );

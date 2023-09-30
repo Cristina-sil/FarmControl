@@ -4,8 +4,9 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
-import store from "./store";
+import { store, persistor } from "./store";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,22 +19,24 @@ import Home from "./pages/Home";
 export default function App() {
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Welcome"
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          <Stack.Screen name="Welcome" component={Welcome} />
-          <Stack.Screen name="Identification" component={Identification} />
-          <Stack.Screen
-            name="IdentificationCheck"
-            component={IdentificationCheck}
-          />
-          <Stack.Screen name="Home" component={Home} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <PersistGate loading={null} persistor={persistor}>
+        <NavigationContainer>
+          <Stack.Navigator
+            initialRouteName="Welcome"
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name="Welcome" component={Welcome} />
+            <Stack.Screen name="Identification" component={Identification} />
+            <Stack.Screen
+              name="IdentificationCheck"
+              component={IdentificationCheck}
+            />
+            <Stack.Screen name="Home" component={Home} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PersistGate>
     </Provider>
   );
 }
