@@ -10,12 +10,17 @@ import {
   IconText,
 } from "./styles";
 
-export default function Header() {
+interface HeaderProps {
+  name: String;
+  logo: String;
+}
+
+export default function Header({ name }: HeaderProps) {
   return (
     <Container>
       <View>
         <Greeting>Olá,</Greeting>
-        <UserName>Welles Paiva</UserName>
+        <UserName>{name}</UserName>
       </View>
       <IconContainer>
         <IconText>WP</IconText>

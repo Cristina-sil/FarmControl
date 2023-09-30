@@ -1,5 +1,8 @@
 import React from "react";
 
+// Libs
+import { useSelector } from "react-redux";
+
 // Components
 import Header from "../../components/Header";
 import OptionButton from "../../components/OptionButton";
@@ -9,12 +12,15 @@ import { Container, HeaderContainer, Title, SubTitle, Row, Separator } from "./s
 
 // Icons
 import Cow from "../../assets/images/Cow";
+import { ReduxState } from "../../store";
 
 export default function Home() {
+
+  const user = useSelector((state: ReduxState) => state.user);
   return (
     <Container>
       <HeaderContainer>
-        <Header />
+        <Header name={user.data.name} logo={user.data.name}/>
         <Title>O que vamos gerenciar?</Title>
         <SubTitle>Selecione as opções abaixo e vamos começar!</SubTitle>
       </HeaderContainer>
