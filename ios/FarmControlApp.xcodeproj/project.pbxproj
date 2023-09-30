@@ -12,10 +12,10 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-FarmControlApp-FarmControlAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-FarmControlApp-FarmControlAppTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		26B444D5D76540668F85D290 /* Jost-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 677CCAEFE57B48828E15B1A9 /* Jost-Medium.ttf */; };
 		64C1727521774AAEB7AC98EC /* Jost-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6440FE8D8EB147309EFA44FA /* Jost-Regular.ttf */; };
+		7699B88040F8A987B510C191 /* libPods-FarmControlApp-FarmControlAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-FarmControlApp-FarmControlAppTests.a */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		900E9F0CA69F4868992502A8 /* Jost-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C5F81D10743A09B5CD429 /* Jost-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
@@ -44,12 +44,12 @@
 		5709B34CF0A7D63546082F79 /* Pods-FarmControlApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmControlApp.release.xcconfig"; path = "Target Support Files/Pods-FarmControlApp/Pods-FarmControlApp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-FarmControlApp-FarmControlAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmControlApp-FarmControlAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FarmControlApp-FarmControlAppTests/Pods-FarmControlApp-FarmControlAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-FarmControlApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FarmControlApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6440FE8D8EB147309EFA44FA /* Jost-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Jost-Regular.ttf"; path = "../src/assets/fonts/Jost-Regular.ttf"; sourceTree = "<group>"; };
+		677CCAEFE57B48828E15B1A9 /* Jost-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Jost-Medium.ttf"; path = "../src/assets/fonts/Jost-Medium.ttf"; sourceTree = "<group>"; };
+		7A8C5F81D10743A09B5CD429 /* Jost-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Jost-SemiBold.ttf"; path = "../src/assets/fonts/Jost-SemiBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FarmControlApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-FarmControlApp-FarmControlAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FarmControlApp-FarmControlAppTests.release.xcconfig"; path = "Target Support Files/Pods-FarmControlApp-FarmControlAppTests/Pods-FarmControlApp-FarmControlAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		677CCAEFE57B48828E15B1A9 /* Jost-Medium.ttf */ = {isa = PBXFileReference; name = "Jost-Medium.ttf"; path = "../src/assets/fonts/Jost-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6440FE8D8EB147309EFA44FA /* Jost-Regular.ttf */ = {isa = PBXFileReference; name = "Jost-Regular.ttf"; path = "../src/assets/fonts/Jost-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7A8C5F81D10743A09B5CD429 /* Jost-SemiBold.ttf */ = {isa = PBXFileReference; name = "Jost-SemiBold.ttf"; path = "../src/assets/fonts/Jost-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +100,17 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = FarmControlApp;
+			sourceTree = "<group>";
+		};
+		1EC8EBDB2F8D485CBB2988A9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				677CCAEFE57B48828E15B1A9 /* Jost-Medium.ttf */,
+				6440FE8D8EB147309EFA44FA /* Jost-Regular.ttf */,
+				7A8C5F81D10743A09B5CD429 /* Jost-SemiBold.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -154,17 +165,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		1EC8EBDB2F8D485CBB2988A9 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				677CCAEFE57B48828E15B1A9 /* Jost-Medium.ttf */,
-				6440FE8D8EB147309EFA44FA /* Jost-Regular.ttf */,
-				7A8C5F81D10743A09B5CD429 /* Jost-SemiBold.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 

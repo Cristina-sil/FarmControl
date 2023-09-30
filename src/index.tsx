@@ -1,6 +1,11 @@
 import * as React from "react";
+
+// Libs
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Provider } from "react-redux";
+
+import store from "./store";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,21 +17,23 @@ import Home from "./pages/Home";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Welcome"
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Welcome" component={Welcome} />
-        <Stack.Screen name="Identification" component={Identification} />
-        <Stack.Screen
-          name="IdentificationCheck"
-          component={IdentificationCheck}
-        />
-        <Stack.Screen name="Home" component={Home} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="Welcome"
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Welcome" component={Welcome} />
+          <Stack.Screen name="Identification" component={Identification} />
+          <Stack.Screen
+            name="IdentificationCheck"
+            component={IdentificationCheck}
+          />
+          <Stack.Screen name="Home" component={Home} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }

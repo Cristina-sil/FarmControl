@@ -1,7 +1,11 @@
 import React from "react";
 
+// Libs
+import { useSelector } from "react-redux";
+
 // Components
 import { Button } from "../../components/ButtonGreen";
+import { ReduxState } from "../../store";
 
 // Styles
 import { Container, Title, Content, SubTitle } from "./styles";
@@ -10,6 +14,11 @@ import { Container, Title, Content, SubTitle } from "./styles";
 import WelcomeLogo from "../../assets/images/WelcomeLogo";
 
 const Welcome = ({ navigation }: any) => {
+
+  const user = useSelector((state: ReduxState) => state.user);
+
+  console.log(user);
+
   return (
     <Container>
       <Content>

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { TouchableWithoutFeedback, Keyboard, Platform } from "react-native";
 
+// libs
+import { useDispatch } from "react-redux";
+
 // Components
 import { Button } from "../../components/ButtonGreen";
 
@@ -18,24 +21,8 @@ import {
 } from "./styles";
 
 export default function Identification({ navigation }: any) {
-  // async function handlerSubmmit(){
-  //   if(!name)
-  //     return Alert.alert('Me diz como chamar você 😢');
 
-  //   try {
-  //     await AsyncStorage.setItem('@plantmanager:user', name);
-  //   } catch (error) {
-  //     Alert.alert('Não foi possível salvar o seu nome. 😢');
-  //   }
-
-  //   navigation.navigate('Confirmation', {
-  //     title: 'Prontinho',
-  //     subTitle: 'Agora vamos começar a cuidar das suas plantinhas com muito cuidado.',
-  //     buttonTitle: 'Começar',
-  //     icon: 'smile',
-  //     nextScreen: 'PlantSelect'
-  //   })
-  // }
+  const dispatch = useDispatch();
 
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
@@ -53,6 +40,13 @@ export default function Identification({ navigation }: any) {
   function handlerInputChange(value: string) {
     setIsFilled(!!value);
     setName(value);
+  }
+
+  const onFillForm = () => {
+    if (name) {
+      dispatch({type: 'FETCH_USER', payload: name})
+      navigation.navigate("IdentificationCheck")
+    }
   }
 
   return (
@@ -77,7 +71,7 @@ export default function Identification({ navigation }: any) {
               <Footer>
                 <Button
                   title="Continuar"
-                  onPress={() => navigation.navigate("IdentificationCheck")}
+                  onPress={() => onFillForm()}
                   active={isFilled}
                 />
               </Footer>
