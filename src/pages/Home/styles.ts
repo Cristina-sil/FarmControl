@@ -2,7 +2,6 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
   flex: 1;
-  background: #ffffff;
 `;
 
 export const HeaderContainer = styled.View`
@@ -12,7 +11,7 @@ export const HeaderContainer = styled.View`
 export const Title = styled.Text`
   font-size: 17px;
   font-family: "Jost-SemiBold";
-  color: #52665a;
+  color: #3A1711;
   line-height: 20px;
   margin-bottom: 5px;
 `;
@@ -20,7 +19,7 @@ export const Title = styled.Text`
 export const SubTitle = styled.Text`
   font-size: 17px;
   font-family: "Jost-Regular";
-  color: #52665a;
+  color: #3A1711;
   line-height: 20px;
 `;
 

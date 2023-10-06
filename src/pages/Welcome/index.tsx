@@ -12,6 +12,7 @@ import { Container, Title, Content, SubTitle } from "./styles";
 
 // Icons
 import WelcomeLogo from "../../assets/images/WelcomeLogo";
+import Logo from "../../assets/images/Logo";
 
 const Welcome = ({ navigation }: any) => {
 
@@ -22,7 +23,7 @@ const Welcome = ({ navigation }: any) => {
   return (
     <Container>
       <Content>
-        <Title>Farm Control</Title>
+        <Logo />
         <WelcomeLogo />
         <SubTitle>Gerencie suas criacões de forma fácil</SubTitle>
         <Button

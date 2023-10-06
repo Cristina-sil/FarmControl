@@ -12,13 +12,13 @@ export const Container = styled.View`
 export const Greeting = styled.Text`
   font-size: 32px;
   font-family: "Jost-Regular";
-  color: #52665a;
+  color: #3A1711;
 `;
 
 export const UserName = styled.Text`
   font-size: 32px;
   font-family: "Jost-SemiBold";
-  color: #52665a;
+  color: #3A1711;
   line-height: 40px;
 `;
 
@@ -26,15 +26,15 @@ export const IconContainer = styled.View`
   width: 50px;
   height: 50px;
   border-radius: 25px;
-  background-color: #ffff00;
+  background-color: #97B733;
   align-items: center;
   justify-content: center;
   border-width: 0.15px;
-  border-color: #52665a;
+  border-color: #3A1711;
 `;
 
 export const IconText = styled.Text`
   font-size: 22px;
-  color: #52665a;
+  color: #FFFFFF;
   font-family: "Jost-Semibold";
 `;

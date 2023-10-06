@@ -21,7 +21,7 @@ export const Emoji = styled.Text`
 export const Title = styled.Text`
   font-size: 26px;
   font-family: "Jost-SemiBold";
-  color: #52665a;
+  color: #3A1711;
   text-align: center;
   line-height: 38px;
   margin-top: 15px;
@@ -32,7 +32,7 @@ export const Subtitle = styled.Text`
   text-align: center;
   font-size: 20px;
   padding: 10px 0 10px 0;
-  color: #5c6660;
+  color: #3A1711;
 `;
 
 export const Footer = styled.View`

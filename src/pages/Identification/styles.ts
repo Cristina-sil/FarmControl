@@ -37,7 +37,7 @@ export const Emoji = styled.Text`
 export const Title = styled.Text`
   font-size: 24px;
   text-align: center;
-  color: #52665a;
+  color: #3A1711;
   font-family: "Jost-SemiBold";
   line-height: 32px;
   margin-top: 20px;
@@ -46,7 +46,7 @@ export const Title = styled.Text`
 export const Input = styled.TextInput`
   border-bottom-width: 1px;
   border-color: #cfcfcf;
-  color: #52665a;
+  color: #3A1711;
   width: 100%;
   font-size: 18px;
   margin-top: 50px;
