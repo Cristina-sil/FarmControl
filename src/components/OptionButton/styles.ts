@@ -10,9 +10,10 @@ export const Container = styled.TouchableOpacity`
 `;
 
 export const ButtonText = styled.Text`
-  font-size: 25px;
+  font-size: 22px;
   color: #FFFFFF;
   font-family: 'Jost-Medium';
+  text-align: center;
 `;
 
 export const Separator = styled.View`
