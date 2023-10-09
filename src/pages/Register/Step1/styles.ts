@@ -1,26 +1,19 @@
 import styled from "styled-components/native";
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   flex: 1;
 `;
 
-export const HeaderContainer = styled.View`
-  padding: 0 30px 0 30px;
+export const Content = styled.View`
+  flex: 1px;
+  padding-horizontal: 10px;
 `;
 
 export const Title = styled.Text`
-  font-size: 17px;
-  font-family: "Jost-SemiBold";
-  color: #3A1711;
-  line-height: 20px;
-  margin-bottom: 5px;
-`;
-
-export const SubTitle = styled.Text`
-  font-size: 17px;
+  font-size: 24px;
   font-family: "Jost-Regular";
   color: #3A1711;
-  line-height: 20px;
+  text-align: center;
 `;
 
 export const Row = styled.View`

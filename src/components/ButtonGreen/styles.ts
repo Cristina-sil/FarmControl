@@ -8,7 +8,7 @@ interface ButtonProps extends TouchableOpacityProps {
 }
 
 export const ButtonContainer = styled.TouchableOpacity<ButtonProps>`
-  background-color: ${(Props) => (Props?.active ? "#32B768" : "#A5A5A5")};
+  background-color: ${(Props) => (Props?.active ? "#97B733" : "#A5A5A5")};
   align-items: center;
   justify-content: center;
   border-radius: 16px;

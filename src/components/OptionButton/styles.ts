@@ -5,14 +5,15 @@ export const Container = styled.TouchableOpacity`
   justify-content: center;
   width: 150px;
   height: 150px;
-  background-color: #ffff00;
+  background-color: #97B733;
   border-radius: 8px;
 `;
 
 export const ButtonText = styled.Text`
-  font-size: 25px;
-  color: #52665a;
+  font-size: 22px;
+  color: #FFFFFF;
   font-family: 'Jost-Medium';
+  text-align: center;
 `;
 
 export const Separator = styled.View`

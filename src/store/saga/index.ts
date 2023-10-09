@@ -1,23 +1,9 @@
-// src/redux/sagas/userSaga.js
-import { put, takeLatest } from 'redux-saga/effects';
+import { all } from "redux-saga/effects";
+import userSaga from "./userSaga";
+import mammalsSaga from "./mammalsSaga";
 
-interface FetchUserAction {
-  type: 'FETCH_USER';
-  payload: string
+function* rootSaga() {
+  yield all([userSaga(), mammalsSaga()]);
 }
 
-function* fetchUser(action: FetchUserAction) {
-  try {
-    const name = action.payload;
-
-    yield put({type: 'USER/setDataUser', payload: name});
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-function* userSaga() {
-  yield takeLatest('FETCH_USER', fetchUser);
-}
-
-export default userSaga;
+export default rootSaga;

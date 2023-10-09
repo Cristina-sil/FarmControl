@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #FFFF00;
+  background-color: #FDF59B;
 `;
 
 export const Content = styled.View`
@@ -14,14 +14,14 @@ export const Content = styled.View`
 
 export const Title = styled.Text`
   font-size: 32px;
-  color: #52665A;
+  color: #3A1711;
   font-family: 'Jost-SemiBold';
 `;
 
 export const SubTitle = styled.Text`
   text-align: center;
   font-size: 25px;
-  color: #5C6660;
+  color: #3A1711;
   padding: 0 20px 0 20px;
   font-family: 'Jost-Regular';
 `;
