@@ -16,13 +16,21 @@ export const Title = styled.Text`
   text-align: center;
 `;
 
-export const Row = styled.View`
-  flex-direction: row;
-  padding: 0 20px 0 20px;
-  justify-content: space-evenly;
-  align-items: center;
+export const Separator = styled.View`
+  height: 15px;
 `;
 
-export const Separator = styled.View`
-  height: 20px;
-`;
+export const ViewCheckBox = styled.View`
+  flex-direction: row;
+  align-items: center;
+  padding-horizontal: 15px;
+  margin-top: 10px;
+`
+
+export const TextCheckBox = styled.Text`
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 20px;
+  font-family: 'Jost-Regular';
+  color: #3A1711;
+`

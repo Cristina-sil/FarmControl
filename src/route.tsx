@@ -11,6 +11,9 @@ import IdentificationCheck from "./pages/IdentificationCheck";
 import Home from "./pages/Home";
 import Step1 from "./pages/Register/Step1";
 import Step2 from "./pages/Register/Step2";
+import Step3 from "./pages/Register/Step3";
+import Step4 from "./pages/Register/Step4";
+import Finish from "./pages/Register/Finish";
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +35,9 @@ const Route = () => {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Step1" component={Step1} />
         <Stack.Screen name="Step2" component={Step2} />
+        <Stack.Screen name="Step3" component={Step3} />
+        <Stack.Screen name="Step4" component={Step4} />
+        <Stack.Screen name="Finish" component={Finish} />
       </Stack.Navigator>
     </NavigationContainer>
   );

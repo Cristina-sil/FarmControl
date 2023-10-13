@@ -19,7 +19,7 @@ const Step1 = ({ navigation }: any) => {
     <Container>
       <HeaderBack />
       <Content>
-        <Title>Selecione o tipo de animal que você quer cadastrar!</Title>
+        <Title>{'Selecione o tipo de animal\nque você quer cadastrar.'}</Title>
         <Separator />
         <Row>
           <OptionButton
