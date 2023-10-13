@@ -1,5 +1,5 @@
-import styled from 'styled-components/native';
-import { Picker } from '@react-native-picker/picker';
+import styled from "styled-components/native";
+import { Picker } from "@react-native-picker/picker";
 
 export const Container = styled.View`
   width: 100%;
@@ -9,8 +9,8 @@ export const Container = styled.View`
 
 export const Title = styled.Text`
   font-size: 17px;
-  font-family: 'Jost-Regular';
-  color: #3A1711;
+  font-family: "Jost-Regular";
+  color: ${(Props) => (Props?.error ? "#C4302B" : "#3A1711")};
   align-self: flex-start;
   margin-left: 10px;
 `;
@@ -18,7 +18,7 @@ export const Title = styled.Text`
 export const PickerContainer = styled.View`
   border-radius: 8px;
   border-width: 1px;
-  border-color: #3A1711;
+  color: ${(Props) => (Props?.error ? "#C4302B" : "#3A1711")};
   width: 95%;
   height: 56px;
   padding: 5px;
@@ -27,3 +27,11 @@ export const PickerContainer = styled.View`
 `;
 
 export const PickerSelect = styled(Picker)``;
+
+export const ErrorText = styled.Text`
+  font-size: 15px;
+  font-family: "Jost-Regular";
+  color: #c4302b;
+  align-self: flex-start;
+  margin-left: 12px;
+`;

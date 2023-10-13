@@ -1,28 +1,31 @@
-import React, { useState } from "react";
-import {KeyboardType} from 'react-native'
+import React from "react";
 
 // Styles
-import { Container, Title, InputAll, Separator } from "./styles";
+import { Container, Title, InputAll, Separator, ErrorText } from "./styles";
 
 import { maskDate } from "../../utils";
 
 interface InputAllProps {
   TitleInput: String;
+  value: string;
+  setValue: (e: string) => void;
+  errorInput: Boolean
 }
 
-const InputDate = ({ TitleInput }: InputAllProps) => {
-  const [text, setText] = useState("");
+const InputDate = ({ TitleInput, value, setValue, errorInput }: InputAllProps) => {
   return (
     <Container>
-      <Title>{TitleInput}</Title>
+      <Title error={errorInput}>{TitleInput}</Title>
       <Separator />
       <InputAll
-        value={text}
+        value={value}
         onChangeText={(e) => {
-          setText(maskDate(e));
+          setValue(maskDate(e));
         }}
         keyboardType="numeric"
+        error={errorInput}
       />
+      {errorInput && <ErrorText>Campo obrigatório</ErrorText>}
     </Container>
   );
 };

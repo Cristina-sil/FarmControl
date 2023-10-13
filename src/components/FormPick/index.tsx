@@ -1,8 +1,7 @@
 import React from "react";
-import { Platform } from "react-native";
 
 // Styles
-import { Container, Title, PickerSelect, PickerContainer } from "./styles";
+import { Container, Title, PickerSelect, PickerContainer, ErrorText } from "./styles";
 
 // Utils
 import { validatePickerGenre } from "../../utils";
@@ -11,13 +10,14 @@ interface FormPickProps {
   titleForm: String;
   value: Number;
   setValue: (e: Number) => void;
+  errorPicker: Boolean
 }
 
-const FormPick = ({ titleForm, value, setValue }: FormPickProps) => {
+const FormPick = ({ titleForm, value, setValue, errorPicker }: FormPickProps) => {
   return (
     <Container>
-      <Title>{titleForm}</Title>
-      <PickerContainer>
+      <Title error={errorPicker}>{titleForm}</Title>
+      <PickerContainer error={errorPicker}>
         <PickerSelect
           style={{
             width: "100%",
@@ -39,6 +39,7 @@ const FormPick = ({ titleForm, value, setValue }: FormPickProps) => {
           ))}
         </PickerSelect>
       </PickerContainer>
+      {errorPicker && <ErrorText>Campo obrigatório</ErrorText>}
     </Container>
   );
 };

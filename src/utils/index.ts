@@ -1,3 +1,5 @@
+import { isAfter, parse, isValid } from 'date-fns';
+
 export const validatePickerGenre = [
   {label: 'Selecionar', value: 0, key: 0},
   {label: 'Macho', value: 1, key: 1},
@@ -15,3 +17,18 @@ export const maskDate = (value: any) => {
 
   return v;
 };
+
+export const formatDate = (date: any) => {
+  const newDate = date?.split('/');
+
+  return `${newDate[2]}-${newDate[1]}-${newDate[0]}`;
+};
+
+export const checkDate = (value: any) => {
+  const date = formatDate(value);
+
+  const dateFormated = parse(date, 'yyyy-MM-dd', new Date());
+  const isValidDate = isValid(dateFormated) ? !isAfter(dateFormated, new Date()) : false;
+
+  return isValidDate;
+}

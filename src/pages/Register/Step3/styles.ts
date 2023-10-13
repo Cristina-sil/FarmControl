@@ -19,3 +19,18 @@ export const Title = styled.Text`
 export const Separator = styled.View`
   height: 15px;
 `;
+
+export const ViewCheckBox = styled.View`
+  flex-direction: row;
+  align-items: center;
+  padding-horizontal: 15px;
+  margin-top: 10px;
+`
+
+export const TextCheckBox = styled.Text`
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 20px;
+  font-family: 'Jost-Regular';
+  color: #3A1711;
+`
