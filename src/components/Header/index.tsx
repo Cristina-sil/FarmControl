@@ -25,18 +25,25 @@ export default function Header({ name, logo }: HeaderProps) {
   for (let i = 0; i < logoSplit.length; i++) {
     const letter = logoSplit[i];
     if (letter.length > 0) {
+      if (logoTransformed.length == 2) return logoTransformed
       logoTransformed += letter[0];
     }
   }
 
   return logoTransformed;
   }
+
+  const nameFormated = () => {
+    const nameSplit = name.split(' ')
+
+    return `${nameSplit[0]} ${nameSplit[1]}`
+  }
   
   return (
     <Container>
       <View>
         <Greeting>Olá,</Greeting>
-        <UserName>{name}</UserName>
+        <UserName>{nameFormated()}</UserName>
       </View>
       <IconContainer>
         <IconText>{transformLogo()}</IconText>

@@ -10,8 +10,8 @@ export const Content = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 24px;
-  font-family: "Jost-Regular";
+  font-size: 22px;
+  font-family: "Jost-Medium";
   color: #3A1711;
   text-align: center;
 `;
