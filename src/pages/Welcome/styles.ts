@@ -12,12 +12,6 @@ export const Content = styled.View`
   padding: 0 20px 0 20px;
 `;
 
-export const Title = styled.Text`
-  font-size: 32px;
-  color: #3A1711;
-  font-family: 'Jost-SemiBold';
-`;
-
 export const SubTitle = styled.Text`
   text-align: center;
   font-size: 25px;

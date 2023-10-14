@@ -25,7 +25,7 @@ const InputDate = ({ TitleInput, value, setValue, errorInput }: InputAllProps) =
         keyboardType="numeric"
         error={errorInput}
       />
-      {errorInput && <ErrorText>Campo obrigatório</ErrorText>}
+      {errorInput && <ErrorText>Data inválida</ErrorText>}
     </Container>
   );
 };

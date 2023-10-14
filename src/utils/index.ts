@@ -18,14 +18,11 @@ export const maskDate = (value: any) => {
   return v;
 };
 
-export const formatDate = (date: any) => {
-  const newDate = date?.split('/');
-
-  return `${newDate[2]}-${newDate[1]}-${newDate[0]}`;
-};
-
 export const checkDate = (value: any) => {
-  const date = formatDate(value);
+
+  const newDate = value?.split('/');
+
+  const date =  `${newDate[2]}-${newDate[1]}-${newDate[0]}`
 
   const dateFormated = parse(date, 'yyyy-MM-dd', new Date());
   const isValidDate = isValid(dateFormated) ? !isAfter(dateFormated, new Date()) : false;

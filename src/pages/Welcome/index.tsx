@@ -5,10 +5,10 @@ import { useSelector } from "react-redux";
 
 // Components
 import { Button } from "../../components/ButtonGreen";
-import { ReduxState } from "../../store";
+import { ReduxState } from "../../store/reducer";
 
 // Styles
-import { Container, Title, Content, SubTitle } from "./styles";
+import { Container, Content, SubTitle } from "./styles";
 
 // Icons
 import WelcomeLogo from "../../assets/images/WelcomeLogo";
@@ -16,9 +16,17 @@ import Logo from "../../assets/images/Logo";
 
 const Welcome = ({ navigation }: any) => {
 
-  const user = useSelector((state: ReduxState) => state.user);
+  const user = useSelector((state: ReduxState) => state.user.data.name);
 
-  console.log(user);
+  const mammals = useSelector((state: ReduxState) => state.mammals.data.mammals);
+
+  const onPressNavigation = () => {
+    if (user) {
+      navigation.navigate("Home")
+    } else {
+      navigation.navigate("Identification")
+    }
+  }
 
   return (
     <Container>
@@ -28,7 +36,7 @@ const Welcome = ({ navigation }: any) => {
         <SubTitle>Gerencie suas criacões de forma fácil</SubTitle>
         <Button
           title="Continuar"
-          onPress={() => navigation.navigate("Identification")}
+          onPress={() => onPressNavigation()}
           active
         />
       </Content>

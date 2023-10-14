@@ -4,7 +4,7 @@ export const Container = styled.SafeAreaView`
   flex: 1;
 `;
 
-export const Content = styled.View`
+export const Content = styled.ScrollView`
   flex: 1px;
   padding-horizontal: 10px;
 `;

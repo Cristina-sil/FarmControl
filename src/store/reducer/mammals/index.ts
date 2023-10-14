@@ -16,10 +16,16 @@ export interface mammalsState {
   raceFather: String,
   raceMother: String,
   inmate: Boolean,
+  vaccinated: Boolean,
+  nameVaccine: String,
 }
 
 export interface mammalsListState {
-   mammals: Array<mammalsState>,
+  data: {
+    mammals: Array<mammalsState>,
+  },
+  loading: Boolean,
+  error: any,
 }
 
 const initialState = {

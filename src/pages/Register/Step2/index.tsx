@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { KeyboardAvoidingView } from "react-native";
 
 // Components
 import HeaderBack from "../../../components/HeaderBack";
@@ -25,14 +26,12 @@ const Step2 = ({ navigation, route }: any) => {
   const [errorDateWeight, setErrorDateWeight] = useState(false);
 
   const onPressForm = () => {
+    const isValidDate = checkDate(dateWeight);
+    setErrorDateWeight(!isValidDate);
     setErrorId(!id);
     setErrorSex(sex === 0);
     setErrorWeight(!weight);
-    if (dateWeight) {
-      const isValid = checkDate(dateWeight);
-      setErrorDateWeight(!isValid);
-    }
-    if (id && sex != 0 && weight && !errorDateWeight) {
+    if (id && sex != 0 && weight && isValidDate) {
       navigation.navigate("Step3", {
         ...params,
         id,
@@ -45,52 +44,58 @@ const Step2 = ({ navigation, route }: any) => {
   };
 
   return (
-    <Container>
-      <HeaderBack />
-      <Content>
-        <Title>{"Agora vamos preencher\nalguns dados do seu animal."}</Title>
-        <Separator />
-        <Input
-          TitleInput="Código do animal (*)"
-          Keyboard="numeric"
-          value={id}
-          setValue={setId}
-          errorInput={errorId}
-        />
-        <Separator />
-        <Input
-          TitleInput="Raça do animal"
-          Keyboard="default"
-          value={race}
-          setValue={setRace}
-          errorInput={false}
-        />
-        <Separator />
-        <FormPick
-          value={sex}
-          setValue={setSex}
-          titleForm="Sexo do animal (*)"
-          errorPicker={errorSex}
-        />
-        <Separator />
-        <Input
-          TitleInput="Peso do animal (*)"
-          Keyboard="numeric"
-          value={weight}
-          setValue={setWeight}
-          errorInput={errorWeight}
-        />
-        <Separator />
-        <InputDate
-          TitleInput="Data da ultima pesagem"
-          value={dateWeight}
-          setValue={setDateWeight}
-          errorInput={false}
-        />
-        <Separator />
-        <Button active title="Continuar" onPress={() => onPressForm()} />
-      </Content>
-    </Container>
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={"height"}
+      keyboardVerticalOffset={-70}
+    >
+      <Container>
+        <HeaderBack />
+        <Content>
+          <Title>{"Agora vamos preencher\nalguns dados do seu animal."}</Title>
+          <Separator />
+          <Input
+            TitleInput="Código do animal (*)"
+            Keyboard="numeric"
+            value={id}
+            setValue={setId}
+            errorInput={errorId}
+          />
+          <Separator />
+          <Input
+            TitleInput="Raça do animal"
+            Keyboard="default"
+            value={race}
+            setValue={setRace}
+            errorInput={false}
+          />
+          <Separator />
+          <FormPick
+            value={sex}
+            setValue={setSex}
+            titleForm="Sexo do animal (*)"
+            errorPicker={errorSex}
+          />
+          <Separator />
+          <Input
+            TitleInput="Peso do animal (*)"
+            Keyboard="numeric"
+            value={weight}
+            setValue={setWeight}
+            errorInput={errorWeight}
+          />
+          <Separator />
+          <InputDate
+            TitleInput="Data da ultima pesagem"
+            value={dateWeight}
+            setValue={setDateWeight}
+            errorInput={errorDateWeight}
+          />
+          <Separator />
+          <Button active title="Continuar" onPress={() => onPressForm()} />
+        </Content>
+      </Container>
+    </KeyboardAvoidingView>
   );
 };
 
