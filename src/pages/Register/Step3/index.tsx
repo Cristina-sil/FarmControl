@@ -54,8 +54,6 @@ const Step3 = ({ navigation, route }: any) => {
     setVaccinated(false);
   };
 
-  console.log(params);
-
   const onPressForm = () => {
     if (purchase) {
       const isValidDate = checkDate(datePurchase);
@@ -83,7 +81,7 @@ const Step3 = ({ navigation, route }: any) => {
           nameVaccine: nameVaccine,
         };
         dispatch({ type: "FETCH_MAMMALS", payload: data });
-        // navigation.navigate("Finish");
+        navigation.navigate("Finish");
       }
     } else if (farm) {
       const isValidDate = checkDate(birthDate);
@@ -109,7 +107,7 @@ const Step3 = ({ navigation, route }: any) => {
           nameVaccine: nameVaccine,
         };
         dispatch({ type: "FETCH_MAMMALS", payload: data });
-        // navigation.navigate("Finish");
+        navigation.navigate("Finish");
       }
     }
   };
@@ -117,7 +115,6 @@ const Step3 = ({ navigation, route }: any) => {
     <KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={"height"}
-      keyboardVerticalOffset={-70}
     >
       <Container>
         <HeaderBack />

@@ -47,7 +47,6 @@ const Step2 = ({ navigation, route }: any) => {
     <KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={"height"}
-      keyboardVerticalOffset={-70}
     >
       <Container>
         <HeaderBack />
