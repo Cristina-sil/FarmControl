@@ -5,6 +5,7 @@ const { width } = Dimensions.get("window");
 
 export const Container = styled.SafeAreaView`
   flex: 1;
+  background-color: #FFFFFF;
 `;
 
 export const Content = styled.View`
@@ -36,7 +37,7 @@ export const SearchText = styled.TextInput`
 
 export const ListMammals = styled.FlatList``;
 
-export const ItemContainer = styled.View`
+export const ItemContainer = styled.TouchableOpacity`
   width: 100%;
   padding: 5px;
 `;
@@ -68,5 +69,27 @@ export const Title = styled.Text`
   font-size: 22px;
   font-family: "Jost-Medium";
   color: #3A1711;
+  text-align: center;
+`;
+
+export const EmptyContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+`;
+
+export const TextEmpty = styled.Text`
+  font-size: 22px;
+  font-family: 'Jost-Medium';
+  color: #3A1711;
+  margin-top: 15px;
+`;
+
+export const TextEmptyDescription = styled.Text`
+  font-size: 20px;
+  font-family: 'Jost-Regular';
+  color: #3A1711;
+  margin-top: 8px;
   text-align: center;
 `;

@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { KeyboardAvoidingView } from "react-native";
 
 // Components
-import HeaderBack from "../../../components/HeaderBack";
-import Input from "../../../components/Input";
-import { Button } from "../../../components/ButtonGreen";
-import FormPick from "../../../components/FormPick";
-import InputDate from "../../../components/InputDate";
+import HeaderBack from "../../../../components/HeaderBack";
+import Input from "../../../../components/Input";
+import { Button } from "../../../../components/ButtonGreen";
+import FormPick from "../../../../components/FormPick";
+import InputDate from "../../../../components/InputDate";
 
 // Styles
 import { Container, Content, Separator, Title } from "./styles";
-import { checkDate } from "../../../utils";
+import { checkDate } from "../../../../utils";
 
-const Step2 = ({ navigation, route }: any) => {
+const Step1Edit = ({ navigation, route }: any) => {
   const params = route?.params;
 
   const [id, setId] = useState("");
-  const [errorId, setErrorId] = useState(false);
   const [race, setRace] = useState("");
   const [sex, setSex] = useState<Number>(0);
   const [errorSex, setErrorSex] = useState(false);
@@ -25,41 +24,50 @@ const Step2 = ({ navigation, route }: any) => {
   const [dateWeight, setDateWeight] = useState("");
   const [errorDateWeight, setErrorDateWeight] = useState(false);
 
+  const initState = () => {
+    setId(params?.id);
+    setRace(params?.race);
+    setSex(params?.sex);
+    setWeight(params?.weight);
+    setDateWeight(params?.dateWeight);
+  };
+
+  useEffect(() => {
+    initState();
+  }, []);
+
   const onPressForm = () => {
     const isValidDate = checkDate(dateWeight);
     setErrorDateWeight(!isValidDate);
-    setErrorId(!id);
     setErrorSex(sex === 0);
     setErrorWeight(!weight);
     if (id && sex != 0 && weight && isValidDate) {
-      navigation.navigate("Step3", {
+      navigation.navigate("Step2Edit", {
         ...params,
-        id,
-        race,
-        sex,
-        weight,
-        dateWeight,
+        newData: {
+          race,
+          sex,
+          weight,
+          dateWeight,
+        },
       });
     }
   };
 
   return (
-    <KeyboardAvoidingView
-      style={{ flex: 1 }}
-      behavior={"height"}
-    >
+    <KeyboardAvoidingView style={{ flex: 1 }} behavior={"height"}>
       <Container>
         <HeaderBack />
         <Content>
-          <Title>{"Agora vamos preencher\nalguns dados do seu animal."}</Title>
+          <Title>{"Aqui você pode editar\nalguns dados do seu animal."}</Title>
           <Separator />
           <Input
-            TitleInput="Código do animal (*)"
+            TitleInput="Código do animal"
             Keyboard="default"
             value={id}
             setValue={setId}
-            errorInput={errorId}
-            editable={true}
+            errorInput={false}
+            editable={false}
           />
           <Separator />
           <Input
@@ -102,4 +110,4 @@ const Step2 = ({ navigation, route }: any) => {
   );
 };
 
-export default Step2;
+export default Step1Edit;

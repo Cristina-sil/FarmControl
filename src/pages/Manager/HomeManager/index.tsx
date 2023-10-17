@@ -9,6 +9,7 @@ import HeaderBack from "../../../components/HeaderBack";
 
 // Store
 import { ReduxState } from "../../../store/reducer";
+import { mammalsState } from "../../../store/reducer/mammals";
 
 // Utils
 import { renderSex } from "../../../utils";
@@ -26,12 +27,14 @@ import {
   ItemLine,
   Separator,
   Title,
+  EmptyContainer,
+  TextEmpty,
+  TextEmptyDescription
 } from "./styles";
 
 // Icons
 import SvgSearch from "../../../assets/images/Search";
 import Empty from "../../../assets/images/Empty";
-import { mammalsState } from "../../../store/reducer/mammals";
 
 const HomeManager = ({ navigation, route }: any) => {
   const params = route?.params;
@@ -87,7 +90,12 @@ const HomeManager = ({ navigation, route }: any) => {
           renderItem={(item) => {
             const { id, race, sex } = item.item;
             return (
-              <ItemContainer>
+              <ItemContainer
+                activeOpacity={0.7}
+                onPress={() =>
+                  navigation.navigate("ManagerDetails", {mammals: item.item})
+                }
+              >
                 <ItemTitle>
                   ID do animal: <ItemDescription>{id}</ItemDescription>
                 </ItemTitle>
@@ -102,7 +110,13 @@ const HomeManager = ({ navigation, route }: any) => {
               </ItemContainer>
             );
           }}
-          ListEmptyComponent={() => <Empty />}
+          ListEmptyComponent={() => (
+            <EmptyContainer>
+              <Empty />
+              <TextEmpty>Ops! Nada por aqui...</TextEmpty>
+              <TextEmptyDescription>{'Cadastre seus animais\ne eles irão ser aparecer aqui.'}</TextEmptyDescription>
+            </EmptyContainer>
+          )}
           keyExtractor={(item, index) => index.toString()}
         />
       </Content>

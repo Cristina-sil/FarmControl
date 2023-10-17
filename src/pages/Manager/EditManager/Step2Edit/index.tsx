@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { KeyboardAvoidingView } from "react-native";
 
 // libs
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 // Components
-import HeaderBack from "../../../components/HeaderBack";
-import Input from "../../../components/Input";
-import SwitchToggle from "../../../components/Switch";
-import { Button } from "../../../components/ButtonGreen";
-import InputDate from "../../../components/InputDate";
+import HeaderBack from "../../../../components/HeaderBack";
+import Input from "../../../../components/Input";
+import SwitchToggle from "../../../../components/Switch";
+import { Button } from "../../../../components/ButtonGreen";
+import InputDate from "../../../../components/InputDate";
 
 // Styles
 import {
@@ -22,11 +22,15 @@ import {
 } from "./styles";
 
 // Utils
-import { checkDate } from "../../../utils";
+import { checkDate } from "../../../../utils";
+import { ReduxState } from "../../../../store/reducer";
 
-const Step3 = ({ navigation, route }: any) => {
+const Step2Edit = ({ navigation, route }: any) => {
   const params = route?.params;
   const dispatch = useDispatch();
+  const mammals = useSelector(
+    (state: ReduxState) => state.mammals.data.mammals
+  );
   const [purchase, setPurchase] = useState(false);
   const [farm, setFarm] = useState(false);
   const [vaccinated, setVaccinated] = useState(false);
@@ -42,43 +46,54 @@ const Step3 = ({ navigation, route }: any) => {
   const [raceFather, setRaceFather] = useState("");
   const [raceMother, setRaceMother] = useState("");
   const [errorRaceFather, setErrorRaceFather] = useState(false);
+  const [errorRaceMother, setErrorRaceMother] = useState(false);
 
-  const togglePurchase = () => {
-    setPurchase(!purchase);
-    setFarm(false);
-    setVaccinated(false);
+  const initState = () => {
+    setPurchase(params?.purchase);
+    setFarm(!params?.purchase);
+    setVaccinated(params?.vaccinated);
+    setRaceFather(params?.raceFather);
+    setRaceMother(params?.raceMother);
+    setDatePurchase(params?.dateAcquisition);
+    setNameVaccine(params?.nameVaccine);
+    setBirthDate(params?.birthDate);
+    setMother(params?.raceMother);
+    setFather(params?.raceFather);
+    setLocalPurchase(params?.localAcquisition);
   };
 
-  const toggleFarm = () => {
-    setPurchase(false);
-    setFarm(!farm);
-    setVaccinated(false);
-  };
+  useEffect(() => {
+    initState();
+  }, []);
 
   const onPressForm = () => {
     if (purchase) {
       const isValidDate = checkDate(datePurchase);
       setErrorLocalPurchase(!localPurchase);
       setErrorRaceFather(!raceFather);
+      setErrorRaceMother(!raceMother);
       setErrorDatePurchase(!isValidDate);
       if (raceFather && localPurchase && isValidDate) {
-        const data = {
-          id: params?.id,
-          type: params?.type,
-          race: params?.race || "SRD",
-          sex: params?.sex,
-          weight: params?.weight,
-          dateWeight: params?.dateWeight,
-          birthDate: birthDate,
-          purchase: purchase,
-          dateAcquisition: datePurchase,
-          localAcquisition: localPurchase,
-          rraceFather: raceFather || father || "SRD",
-          raceMother: raceMother || mother || "SRD",
-          inmate: true,
-          vaccinated: vaccinated,
-          nameVaccine: nameVaccine,
-        };
+        const data = mammals.map((item) => {
+          if (item.id === params?.id) {
+            return {
+              ...item,
+              race: params?.newData.race || "SRD",
+              sex: params?.newData.sex,
+              weight: params?.newData.weight,
+              dateWeight: params?.newData.dateWeight,
+              birthDate: birthDate,
+              purchase: purchase,
+              dateAcquisition: datePurchase,
+              localAcquisition: localPurchase,
+              raceFather: raceFather || father || "SRD",
+              raceMother: raceMother || mother || "SRD",
+              vaccinated: vaccinated,
+              nameVaccine: nameVaccine,
+            };
+          }
+          return item;
+        });
         dispatch({ type: "FETCH_MAMMALS", payload: data });
         navigation.navigate("Finish");
       }
@@ -86,50 +101,37 @@ const Step3 = ({ navigation, route }: any) => {
       const isValidDate = checkDate(birthDate);
       setErrorBirthDate(!isValidDate);
       if (isValidDate) {
-        const data = {
-          id: params?.id,
-          type: params?.type,
-          race: params?.race || "SRD",
-          sex: params?.sex,
-          weight: params?.weight,
-          dateWeight: params?.dateWeight,
-          birthDate: birthDate,
-          purchase: purchase,
-          dateAcquisition: datePurchase,
-          localAcquisition: localPurchase,
-          raceFather: raceFather || "SRD",
-          raceMother: raceMother || "SRD",
-          inmate: true,
-          vaccinated: vaccinated,
-          nameVaccine: nameVaccine,
-        };
-        dispatch({ type: "FETCH_MAMMALS", payload: data });
+        const data = mammals.map((item) => {
+          if (item.id === params?.id) {
+            return {
+              ...item,
+              race: params?.newData.race || "SRD",
+              sex: params?.newData.sex,
+              weight: params?.newData.weight,
+              dateWeight: params?.newData.dateWeight,
+              birthDate: birthDate,
+              purchase: purchase,
+              dateAcquisition: datePurchase,
+              localAcquisition: localPurchase,
+              raceFather: raceFather || father || "SRD",
+              raceMother: raceMother || mother || "SRD",
+              vaccinated: vaccinated,
+              nameVaccine: nameVaccine,
+            };
+          }
+          return item;
+        });
+        dispatch({ type: "FETCH_EDIT_MAMMALS", payload: data });
         navigation.navigate("Finish");
       }
     }
   };
   return (
-    <KeyboardAvoidingView
-      style={{ flex: 1 }}
-      behavior={"height"}
-    >
+    <KeyboardAvoidingView style={{ flex: 1 }} behavior={"height"}>
       <Container>
         <HeaderBack />
         <Content>
-          <Title>{"Agora vamos definir\na origem do seu animal."}</Title>
-          <Separator />
-          <ViewCheckBox>
-            <SwitchToggle switchOn={farm} onPress={() => toggleFarm()} />
-            <TextCheckBox>Animal nascido na fazenda?</TextCheckBox>
-          </ViewCheckBox>
-          <Separator />
-          <ViewCheckBox>
-            <SwitchToggle
-              switchOn={purchase}
-              onPress={() => togglePurchase()}
-            />
-            <TextCheckBox>Animal comprado?</TextCheckBox>
-          </ViewCheckBox>
+          <Title>{"Aqui você pode editar\nalguns dados do seu animal."}</Title>
           <Separator />
           {farm && (
             <>
@@ -195,7 +197,7 @@ const Step3 = ({ navigation, route }: any) => {
                 Keyboard="default"
                 value={raceMother}
                 setValue={setRaceMother}
-                errorInput={errorRaceFather}
+                errorInput={errorRaceMother}
                 editable={true}
               />
               <Separator />
@@ -228,4 +230,4 @@ const Step3 = ({ navigation, route }: any) => {
   );
 };
 
-export default Step3;
+export default Step2Edit;

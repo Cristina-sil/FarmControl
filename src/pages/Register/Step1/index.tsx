@@ -10,7 +10,7 @@ import { Container, Title, Row, Separator, Content } from "./styles";
 import Cow from "../../../assets/images/Cow";
 import Horse from "../../../assets/images/Horse";
 import Pork from "../../../assets/images/Pork";
-import Goat from "../../../assets/images/Goat.tsx";
+import Goat from "../../../assets/images/Goat";
 import Sheep from "../../../assets/images/Sheep";
 import HeaderBack from "../../../components/HeaderBack";
 

@@ -9,10 +9,17 @@ interface InputAllProps {
   TitleInput: String;
   value: string;
   setValue: (e: string) => void;
-  errorInput: Boolean
+  errorInput: Boolean;
+  editable: boolean;
 }
 
-const InputDate = ({ TitleInput, value, setValue, errorInput }: InputAllProps) => {
+const InputDate = ({
+  TitleInput,
+  value,
+  setValue,
+  errorInput,
+  editable,
+}: InputAllProps) => {
   return (
     <Container>
       <Title error={errorInput}>{TitleInput}</Title>
@@ -24,6 +31,7 @@ const InputDate = ({ TitleInput, value, setValue, errorInput }: InputAllProps) =
         }}
         keyboardType="numeric"
         error={errorInput}
+        editable={editable}
       />
       {errorInput && <ErrorText>Data inválida</ErrorText>}
     </Container>
