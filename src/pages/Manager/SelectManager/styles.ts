@@ -4,10 +4,9 @@ export const Container = styled.SafeAreaView`
   flex: 1;
 `;
 
-export const Content = styled.ScrollView`
+export const Content = styled.View`
   flex: 1px;
   padding-horizontal: 10px;
-  margin-bottom: 100px;
 `;
 
 export const Title = styled.Text`
@@ -17,6 +16,13 @@ export const Title = styled.Text`
   text-align: center;
 `;
 
+export const Row = styled.View`
+  flex-direction: row;
+  padding: 0 20px 0 20px;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
 export const Separator = styled.View`
-  height: 15px;
+  height: 20px;
 `;

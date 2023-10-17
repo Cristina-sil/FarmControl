@@ -16,8 +16,6 @@ function* fetchMammals(action: FetchMammalsAction) {
 
     const newList = [].concat(mammalsState, list);
 
-    console.log(newList);
-
     yield put({ type: "MAMMALS/setMammals", payload: newList });
   } catch (error) {
     console.log(error);

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { G, Rect, Path, Defs, ClipPath } from "react-native-svg";
 
-const Back = (props) => (
+const Back = (props: any) => (
   <Svg
     width={44}
     height={44}

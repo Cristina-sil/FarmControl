@@ -24,7 +24,7 @@ import Plus from "../../assets/images/Plus";
 // Utils
 import { ReduxState } from "../../store/reducer";
 
-export default function Home({navigation} : any) {
+export default function Home({ navigation }: any) {
   const user = useSelector((state: ReduxState) => state.user);
   return (
     <Container>
@@ -35,8 +35,16 @@ export default function Home({navigation} : any) {
       </HeaderContainer>
       <Separator />
       <Row>
-        <OptionButton title="Adicionar animal" image={<Plus />} onPress={() => navigation.navigate('Step1')} />
-        <OptionButton title="Gerenciar animais" image={<Cow />} onPress={() => {}} />
+        <OptionButton
+          title="Adicionar animal"
+          image={<Plus />}
+          onPress={() => navigation.navigate("Step1")}
+        />
+        <OptionButton
+          title="Gerenciar animais"
+          image={<Cow />}
+          onPress={() => navigation.navigate("SelectManager")}
+        />
       </Row>
       {/* <Separator />
       <Row>

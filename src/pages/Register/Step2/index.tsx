@@ -47,7 +47,6 @@ const Step2 = ({ navigation, route }: any) => {
     <KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={"height"}
-      keyboardVerticalOffset={-70}
     >
       <Container>
         <HeaderBack />
@@ -56,7 +55,7 @@ const Step2 = ({ navigation, route }: any) => {
           <Separator />
           <Input
             TitleInput="Código do animal (*)"
-            Keyboard="numeric"
+            Keyboard="default"
             value={id}
             setValue={setId}
             errorInput={errorId}
@@ -86,7 +85,7 @@ const Step2 = ({ navigation, route }: any) => {
           />
           <Separator />
           <InputDate
-            TitleInput="Data da ultima pesagem"
+            TitleInput="Data da ultima pesagem (*)"
             value={dateWeight}
             setValue={setDateWeight}
             errorInput={errorDateWeight}
