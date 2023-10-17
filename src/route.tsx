@@ -15,6 +15,7 @@ import Step3 from "./pages/Register/Step3";
 import Finish from "./pages/Register/Finish";
 import SelectManager from "./pages/Manager/SelectManager";
 import HomeManager from "./pages/Manager/HomeManager";
+import ManagerDetails from "./pages/Manager/ManagerDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +41,7 @@ const Route = () => {
         <Stack.Screen name="Finish" component={Finish} />
         <Stack.Screen name="SelectManager" component={SelectManager} />
         <Stack.Screen name="HomeManager" component={HomeManager} />
+        <Stack.Screen name="ManagerDetails" component={ManagerDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
