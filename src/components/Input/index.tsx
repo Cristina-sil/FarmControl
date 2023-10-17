@@ -10,6 +10,7 @@ interface InputAllProps {
   value: string;
   setValue: (e: string) => void;
   errorInput: Boolean;
+  editable: boolean
 }
 
 const Input = ({
@@ -18,6 +19,7 @@ const Input = ({
   value,
   setValue,
   errorInput,
+  editable,
 }: InputAllProps) => {
   return (
     <Container>
@@ -30,6 +32,7 @@ const Input = ({
         }}
         keyboardType={Keyboard}
         error={errorInput}
+        editable={editable}
       />
       {errorInput && <ErrorText>Campo obrigatório</ErrorText>}
     </Container>

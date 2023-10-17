@@ -15,18 +15,15 @@ import WelcomeLogo from "../../assets/images/WelcomeLogo";
 import Logo from "../../assets/images/Logo";
 
 const Welcome = ({ navigation }: any) => {
-
   const user = useSelector((state: ReduxState) => state.user.data.name);
-
-  const mammals = useSelector((state: ReduxState) => state.mammals.data.mammals);
 
   const onPressNavigation = () => {
     if (user) {
-      navigation.navigate("Home")
+      navigation.navigate("Home");
     } else {
-      navigation.navigate("Identification")
+      navigation.navigate("Identification");
     }
-  }
+  };
 
   return (
     <Container>
@@ -34,11 +31,7 @@ const Welcome = ({ navigation }: any) => {
         <Logo />
         <WelcomeLogo />
         <SubTitle>Gerencie suas criacões de forma fácil</SubTitle>
-        <Button
-          title="Continuar"
-          onPress={() => onPressNavigation()}
-          active
-        />
+        <Button title="Continuar" onPress={() => onPressNavigation()} active />
       </Content>
     </Container>
   );

@@ -11,8 +11,6 @@ export interface mammalsState {
   purchase: Boolean,
   dateAcquisition: String,
   localAcquisition: String,
-  father: Number,
-  mother: Number,
   raceFather: String,
   raceMother: String,
   inmate: Boolean,

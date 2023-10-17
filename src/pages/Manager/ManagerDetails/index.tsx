@@ -109,7 +109,7 @@ const ManagerDetails = ({ navigation, route }: any) => {
           </>
         )}
         <Separator />
-        <ButtonEdit>
+        <ButtonEdit activeOpacity={0.7} onPress={() => navigation.navigate('Step1Edit', {...params})}>
           <TextEdit>Editar animal</TextEdit>
         </ButtonEdit>
         <Separator />
