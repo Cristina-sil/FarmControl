@@ -13,6 +13,8 @@ import Step1 from "./pages/Register/Step1";
 import Step2 from "./pages/Register/Step2";
 import Step3 from "./pages/Register/Step3";
 import Finish from "./pages/Register/Finish";
+import SelectManager from "./pages/Manager/SelectManager";
+import HomeManager from "./pages/Manager/HomeManager";
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +38,8 @@ const Route = () => {
         <Stack.Screen name="Step2" component={Step2} />
         <Stack.Screen name="Step3" component={Step3} />
         <Stack.Screen name="Finish" component={Finish} />
+        <Stack.Screen name="SelectManager" component={SelectManager} />
+        <Stack.Screen name="HomeManager" component={HomeManager} />
       </Stack.Navigator>
     </NavigationContainer>
   );

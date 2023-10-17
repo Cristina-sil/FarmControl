@@ -1,7 +1,7 @@
 import * as React from "react";
 import Svg, { G, Path, Defs, ClipPath } from "react-native-svg";
 
-const ArrowDown = (props) => (
+const ArrowDown = (props: any) => (
   <Svg
     width={24}
     height={24}

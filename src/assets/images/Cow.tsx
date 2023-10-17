@@ -1,6 +1,6 @@
 import * as React from "react";
 import Svg, { G, Path } from "react-native-svg";
-const Cow = (props) => (
+const Cow = (props: any) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
     width={99.047}

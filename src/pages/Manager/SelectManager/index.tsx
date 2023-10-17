@@ -14,23 +14,23 @@ import Goat from "../../../assets/images/Goat.tsx";
 import Sheep from "../../../assets/images/Sheep";
 import HeaderBack from "../../../components/HeaderBack";
 
-const Step1 = ({ navigation }: any) => {
+const SelectManager = ({ navigation }: any) => {
   return (
     <Container>
       <HeaderBack />
       <Content>
-        <Title>{'Selecione o tipo de animal\nque você quer cadastrar.'}</Title>
+        <Title>{'Selecione o tipo de animal\nque você quer gerenciar.'}</Title>
         <Separator />
         <Row>
           <OptionButton
             title="Bovino"
             image={<Cow />}
-            onPress={() => navigation.navigate("Step2", { type: "Bovino" })}
+            onPress={() => navigation.navigate("HomeManager", { type: "Bovino" })}
           />
           <OptionButton
             title="Equino"
             image={<Horse />}
-            onPress={() => navigation.navigate("Step2", { type: "Equino" })}
+            onPress={() => navigation.navigate("HomeManager", { type: "Equino" })}
           />
         </Row>
         <Separator />
@@ -38,12 +38,12 @@ const Step1 = ({ navigation }: any) => {
           <OptionButton
             title="Suíno"
             image={<Pork />}
-            onPress={() => navigation.navigate("Step2", { type: "Suino" })}
+            onPress={() => navigation.navigate("HomeManager", { type: "Suino" })}
           />
           <OptionButton
             title="Caprino"
             image={<Goat />}
-            onPress={() => navigation.navigate("Step2", { type: "Caprino" })}
+            onPress={() => navigation.navigate("HomeManager", { type: "Caprino" })}
           />
         </Row>
         <Separator />
@@ -51,7 +51,7 @@ const Step1 = ({ navigation }: any) => {
           <OptionButton
             title="Ovino"
             image={<Sheep />}
-            onPress={() => navigation.navigate("Step2", { type: "Ovino" })}
+            onPress={() => navigation.navigate("HomeManager", { type: "Ovino" })}
           />
         </Row>
       </Content>
@@ -59,4 +59,4 @@ const Step1 = ({ navigation }: any) => {
   );
 };
 
-export default Step1;
+export default SelectManager;

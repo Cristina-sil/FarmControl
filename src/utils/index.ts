@@ -29,3 +29,10 @@ export const checkDate = (value: any) => {
 
   return isValidDate;
 }
+
+export const renderSex = (value: any) => {
+  switch(value) {
+    case 1: return 'Macho';
+    case 2: return 'Fêmea'
+  }
+}

@@ -180,7 +180,15 @@ const Step3 = ({ navigation, route }: any) => {
               />
               <Separator />
               <Input
-                TitleInput="Raça dos pais (*)"
+                TitleInput="Raça do pai"
+                Keyboard="default"
+                value={raceFather}
+                setValue={setRaceFather}
+                errorInput={errorRaceFather}
+              />
+              <Separator />
+              <Input
+                TitleInput="Raça da mãe"
                 Keyboard="default"
                 value={raceFather}
                 setValue={setRaceFather}
@@ -208,6 +216,7 @@ const Step3 = ({ navigation, route }: any) => {
             </>
           )}
           <Button title="Continuar" active onPress={() => onPressForm()} />
+          <Separator />
         </Content>
       </Container>
     </KeyboardAvoidingView>
