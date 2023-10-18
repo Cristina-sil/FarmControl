@@ -228,6 +228,7 @@ const Step2Edit = ({ navigation, route }: any) => {
           )}
           <Button title="Continuar" active onPress={() => onPressForm()} />
           <Separator />
+          <Separator />
         </Content>
       </Container>
     </KeyboardAvoidingView>

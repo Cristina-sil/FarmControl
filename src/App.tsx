@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import {BackHandler} from 'react-native';
 
 // Libs
 import { Provider } from "react-redux";
@@ -14,6 +15,11 @@ import Route from "./route";
 export default function App() {
   useEffect(() => {
     SplashScreen.hide();
+    BackHandler.addEventListener('hardwareBackPress', () => true);
+
+    return () => {
+      BackHandler.removeEventListener('hardwareBackPress', () => true);
+    }
   }, []);
   return (
     <Provider store={store}>

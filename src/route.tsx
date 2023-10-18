@@ -28,6 +28,7 @@ const Route = () => {
         initialRouteName="Welcome"
         screenOptions={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       >
         <Stack.Screen name="Welcome" component={Welcome} />

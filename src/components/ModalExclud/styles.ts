@@ -12,7 +12,7 @@ export const Container = styled.View`
 
 export const ContainerInside = styled.View`
   width: 90%;
-  min-height: ${height / 2.3}px;
+  min-height: ${height / 2.1}px;
   border-radius: 2px;
   background-color: #ffffff;
   border-radius: 8px;

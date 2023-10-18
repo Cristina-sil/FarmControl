@@ -7,7 +7,6 @@ export const Container = styled.SafeAreaView`
 export const Content = styled.ScrollView`
   flex: 1px;
   padding-horizontal: 10px;
-  margin-bottom: 100px;
 `;
 
 export const Title = styled.Text`
