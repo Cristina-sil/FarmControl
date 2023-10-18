@@ -57,8 +57,8 @@ const Step2Edit = ({ navigation, route }: any) => {
     setDatePurchase(params?.dateAcquisition);
     setNameVaccine(params?.nameVaccine);
     setBirthDate(params?.birthDate);
-    setMother(params?.raceMother);
-    setFather(params?.raceFather);
+    setMother(params?.idMother);
+    setFather(params?.idFather);
     setLocalPurchase(params?.localAcquisition);
   };
 
@@ -83,19 +83,21 @@ const Step2Edit = ({ navigation, route }: any) => {
               weight: params?.newData.weight,
               dateWeight: params?.newData.dateWeight,
               birthDate: birthDate,
+              idFather: father,
+              idMother: mother,
               purchase: purchase,
               dateAcquisition: datePurchase,
               localAcquisition: localPurchase,
-              raceFather: raceFather || father || "SRD",
-              raceMother: raceMother || mother || "SRD",
+              raceFather: raceFather || "SRD",
+              raceMother: raceMother || "SRD",
               vaccinated: vaccinated,
               nameVaccine: nameVaccine,
             };
           }
           return item;
         });
-        dispatch({ type: "FETCH_MAMMALS", payload: data });
-        navigation.navigate("Finish");
+        dispatch({ type: "FETCH_EDIT_MAMMALS", payload: data });
+        navigation.navigate("Finish", {type: 'EDT'});
       }
     } else if (farm) {
       const isValidDate = checkDate(birthDate);
@@ -110,11 +112,13 @@ const Step2Edit = ({ navigation, route }: any) => {
               weight: params?.newData.weight,
               dateWeight: params?.newData.dateWeight,
               birthDate: birthDate,
+              idFather: father,
+              idMother: mother,
               purchase: purchase,
               dateAcquisition: datePurchase,
               localAcquisition: localPurchase,
-              raceFather: raceFather || father || "SRD",
-              raceMother: raceMother || mother || "SRD",
+              raceFather: raceFather || "SRD",
+              raceMother: raceMother || "SRD",
               vaccinated: vaccinated,
               nameVaccine: nameVaccine,
             };
@@ -122,7 +126,7 @@ const Step2Edit = ({ navigation, route }: any) => {
           return item;
         });
         dispatch({ type: "FETCH_EDIT_MAMMALS", payload: data });
-        navigation.navigate("Finish");
+        navigation.navigate("Finish", {type: 'EDT'});
       }
     }
   };
@@ -145,7 +149,7 @@ const Step2Edit = ({ navigation, route }: any) => {
               />
               <Separator />
               <Input
-                TitleInput="Raça da mãe"
+                TitleInput="Código da mãe do animal"
                 Keyboard="default"
                 value={mother}
                 setValue={setMother}
@@ -154,7 +158,7 @@ const Step2Edit = ({ navigation, route }: any) => {
               />
               <Separator />
               <Input
-                TitleInput="Raça do pai"
+                TitleInput="Código do pai do animal"
                 Keyboard="default"
                 value={father}
                 setValue={setFather}

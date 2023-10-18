@@ -70,17 +70,19 @@ const Step3 = ({ navigation, route }: any) => {
           weight: params?.weight,
           dateWeight: params?.dateWeight,
           birthDate: birthDate,
+          idFather: father,
+          idMother: mother,
           purchase: purchase,
           dateAcquisition: datePurchase,
           localAcquisition: localPurchase,
-          rraceFather: raceFather || father || "SRD",
-          raceMother: raceMother || mother || "SRD",
+          raceFather: raceFather || "SRD",
+          raceMother: raceMother || "SRD",
           inmate: true,
           vaccinated: vaccinated,
           nameVaccine: nameVaccine,
         };
         dispatch({ type: "FETCH_MAMMALS", payload: data });
-        navigation.navigate("Finish");
+        navigation.navigate("Finish", {type: 'ADD'});
       }
     } else if (farm) {
       const isValidDate = checkDate(birthDate);
@@ -94,6 +96,8 @@ const Step3 = ({ navigation, route }: any) => {
           weight: params?.weight,
           dateWeight: params?.dateWeight,
           birthDate: birthDate,
+          idFather: father,
+          idMother: mother,
           purchase: purchase,
           dateAcquisition: datePurchase,
           localAcquisition: localPurchase,
@@ -104,7 +108,7 @@ const Step3 = ({ navigation, route }: any) => {
           nameVaccine: nameVaccine,
         };
         dispatch({ type: "FETCH_MAMMALS", payload: data });
-        navigation.navigate("Finish");
+        navigation.navigate("Finish", {type: 'ADD'});
       }
     }
   };
@@ -143,7 +147,7 @@ const Step3 = ({ navigation, route }: any) => {
               />
               <Separator />
               <Input
-                TitleInput="Raça da mãe"
+                TitleInput="Código da mãe do animal"
                 Keyboard="default"
                 value={mother}
                 setValue={setMother}
@@ -152,7 +156,7 @@ const Step3 = ({ navigation, route }: any) => {
               />
               <Separator />
               <Input
-                TitleInput="Raça do pai"
+                TitleInput="Código do pai do animal"
                 Keyboard="default"
                 value={father}
                 setValue={setFather}
