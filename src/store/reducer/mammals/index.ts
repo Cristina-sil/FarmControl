@@ -8,6 +8,8 @@ export interface mammalsState {
   weight: Number,
   dateWeight: String,
   birthDate: String,
+  idMother: String,
+  idFather: String,
   purchase: Boolean,
   dateAcquisition: String,
   localAcquisition: String,
